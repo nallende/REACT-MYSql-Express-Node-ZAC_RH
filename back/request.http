@@ -1,0 +1,30 @@
+###
+GET http://localhost:8000/modulo HTTP/1.1
+
+###
+GET http://localhost:8000/modulo/3 HTTP/1.1
+
+###
+GET http://localhost:8000/usuario/1234/1234 HTTP/1.1
+
+###
+POST http://localhost:8000/modulo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre":"fdgdfgd",
+    "estado":1
+}
+
+###
+DELETE http://localhost:8000/modulo/5 HTTP/1.1
+
+###
+PUT http://localhost:8000/modulo/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre":"CARMEN",
+    "apellido":"PIZARRO"
+    
+}
