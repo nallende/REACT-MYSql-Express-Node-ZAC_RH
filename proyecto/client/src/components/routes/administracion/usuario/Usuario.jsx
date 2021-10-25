@@ -15,7 +15,7 @@ const Usuario = () => {
         const getDatos = async () =>{
             const res = await fetch('http://localhost:8000/usuario')
             const data = await res.json()
-            setSelectData(data)
+            setSelectData(data[0])
         }
         getDatos();
         setListUpdated(false);

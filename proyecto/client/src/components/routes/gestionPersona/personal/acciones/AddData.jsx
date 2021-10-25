@@ -108,7 +108,7 @@ const Form = ({dataInsert, setDataInsert}) => {
                         type="mail" 
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Ingresar Usuario</button>
+                <button type="submit" className="btn btn-primary">Agregar información</button>
             </div>
         </form>
      );

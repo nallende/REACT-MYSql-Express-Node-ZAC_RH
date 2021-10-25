@@ -103,7 +103,7 @@ const Form = ({dataInsert, setDataInsert, setListUpdated}) => {
                         <option value="1">Vigente</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary">Editar Usuario</button>
+                <button type="submit" className="btn btn-primary">Editar información</button>
             </div>
         </form>
      );

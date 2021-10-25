@@ -85,7 +85,7 @@ const Form = ({dataInsert, setDataInsert}) => {
                         type="password" 
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Agregar</button>
+                <button type="submit" className="btn btn-primary">Agregar información</button>
             </div>
         </form>
      );

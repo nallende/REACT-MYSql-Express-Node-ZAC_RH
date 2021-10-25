@@ -105,7 +105,7 @@ const Form = ({dataInsert, setDataInsert}) => {
                         text="sdfsd"
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Agregar</button>
+                <button type="submit" className="btn btn-primary">Agregar información</button>
             </div>
         </form>
      );

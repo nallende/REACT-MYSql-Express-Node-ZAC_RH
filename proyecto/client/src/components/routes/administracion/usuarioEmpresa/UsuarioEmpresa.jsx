@@ -3,19 +3,29 @@ import ListData from './acciones/ListData'
 import AddData from './acciones/AddData'
 import UpdateData from './acciones/UpdateData'
 
-const Usuario = () => {
+const EmpresaEmpresa = () => {
 
     //Select
     const [selectData, setSelectData] = useState([]);
+    const [selectDataUsuario, setselectDataUsuario] = useState([]);
+    const [selectDataEmpresa, setSelectDataEmpresa] = useState([]);
 
     //Delete
     const [listUpdated, setListUpdated] = useState(false);
 
     useEffect(() => {
         const getDatos = async () =>{
-            const res = await fetch('http://localhost:8000/afp')
+            const res = await fetch('http://localhost:8000/usuarioempresa')
             const data = await res.json()
-            setSelectData(data)
+            setSelectData(data[0])
+
+            const resm = await fetch('http://localhost:8000/usuario')
+            const datam = await resm.json()
+            setselectDataUsuario(datam[0])
+
+            const rese = await fetch('http://localhost:8000/empresa')
+            const datae = await rese.json()
+            setSelectDataEmpresa(datae[0])
         }
         getDatos();
         setListUpdated(false);
@@ -23,7 +33,9 @@ const Usuario = () => {
 
     //Insert
     const [dataInsert, setDataInsert] = useState({
-        nombre:'', estado:1
+      idusuario:'', 
+      idempresa:'', 
+      estado:1
     })
 
 
@@ -33,8 +45,9 @@ const Usuario = () => {
     const editRow = (dato) =>{
       setEditing(true);
       setDataInsert({
-        idafp:dato.idafp,
-        nombre:dato.nombre,
+        idusuarioempresa:dato.idusuarioempresa,
+        idempresa:dato.idempresa,
+        idusuario:dato.idusuario,
         estado:dato.estado
       })
     }
@@ -50,27 +63,42 @@ const Usuario = () => {
               <div className="col-12">
                 {editing ?(
                   <div>
-                    <h2 style={{textAlign:'center'}}>Editar Registro de AFP</h2>
+                    <h2 style={{textAlign:'center'}}>Editar Registro de Módulos por Empresa</h2>
                     <UpdateData
                       dataInsert={dataInsert}
                       setDataInsert={setDataInsert}
                       updateUser={updateUser}
+                      selectDataUsuario={selectDataUsuario}
+                      selectDataEmpresa={selectDataEmpresa} 
                     />
                   </div>
                 ):(
                   <div>
-                    <h2 style={{textAlign:'center'}}>Registro de AFP</h2>
-                    <AddData dataInsert ={dataInsert} setDataInsert={setDataInsert} />
+                    <h2 style={{textAlign:'center'}}>Registro de Módulos por Empresa</h2>
+                    <AddData 
+                      dataInsert ={dataInsert} 
+                      setDataInsert={setDataInsert} 
+                      selectDataUsuario={selectDataUsuario}
+                      selectDataEmpresa={selectDataEmpresa} 
+                    />
                   </div>
                 )
                 }
                 </div>
                 <div className="col-12">
-                    <h2 style={{textAlign:'center'}}>Lista de AFP</h2>
-                    <ListData dataInsert ={dataInsert} setDataInsert={setDataInsert} selectData={selectData} setListUpdated={setListUpdated} editRow={editRow}/>
+                    <h2 style={{textAlign:'center'}}>Lista de Módulos por Empresa</h2>
+                    <ListData 
+                      dataInsert ={dataInsert} 
+                      setDataInsert={setDataInsert} 
+                      selectData={selectData} 
+                      selectDataUsuario={selectDataUsuario}
+                      selectDataEmpresa={selectDataEmpresa} 
+                      setListUpdated={setListUpdated} 
+                      editRow={editRow}
+                    />
                 </div>
             </div>
         </div>
     )
 }
-export default Usuario
+export default EmpresaEmpresa

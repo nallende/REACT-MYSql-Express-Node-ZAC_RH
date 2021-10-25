@@ -5,7 +5,7 @@ routes.get('/', (req, res) =>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err);
 
-        conn.query('SELECT * FROM modulo', (err, rows)=>{
+        conn.query('call modulo()', (err, rows)=>{
             if(err) return res.send(err);
 
             res.json(rows);

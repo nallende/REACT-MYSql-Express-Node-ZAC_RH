@@ -8,7 +8,7 @@ const List = (props) => {
         }
 
         const deleteData = async id =>{
-            const res = await fetch('http://localhost:8000/afp/' + id,requestInit)
+            const res = await fetch('http://localhost:8000/moduloempresa/' + id,requestInit)
             await res.text()
             props.setListUpdated(true);
         }
@@ -21,10 +21,9 @@ const List = (props) => {
         <table className="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
+                    <th>Empresa</th>
+                    <th>Módulo</th>
                     <th>Estado</th>
-                    <th>Fecha Creación</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -32,11 +31,10 @@ const List = (props) => {
                 {
                     props.selectData.length > 0 ?
                     props.selectData.map(data =>(
-                        <tr key={data.idafp}>
-                            <td>{data.idafp}</td>
-                            <td>{data.nombre}</td>
-                            <td>{data.estado}</td>
-                            <td>{data.fecha}</td>
+                        <tr key={data.idmoduloempresa}>
+                            <td>{data.empresa}</td>
+                            <td>{data.modulo}</td>
+                            <td>{data.estadotexto}</td>
                             <td>
                             <button 
                                 className="btn btn-dark"
@@ -47,7 +45,7 @@ const List = (props) => {
                             <button 
                                 className="btn btn-danger ms-2"
                                 onClick={() =>{
-                                    handleDelete(data.idafp);
+                                    handleDelete(data.idmoduloempresa);
                                 }}                                
                             >Delete</button>
                             </td>

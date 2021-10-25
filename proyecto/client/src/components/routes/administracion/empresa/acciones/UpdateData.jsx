@@ -124,7 +124,7 @@ const Form = ({dataInsert, setDataInsert, setListUpdated}) => {
                     </select>
                 </div>
 
-                <button type="submit" className="btn btn-primary">Editar Usuario</button>
+                <button type="submit" className="btn btn-primary">Editar información</button>
             </div>
         </form>
      );

@@ -35,7 +35,7 @@ const List = (props) => {
                         <tr key={data.idmodulo}>
                             <td>{data.idmodulo}</td>
                             <td>{data.nombre}</td>
-                            <td>{data.estado}</td>
+                            <td>{data.estadotexto}</td>
                             
                             <td>
                             <button 
