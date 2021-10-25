@@ -9,6 +9,7 @@ import {
 
   
 import Inicio from './Inicio';
+import Login from './Login';
 
 //Administracion
 import Modulo from './routes/administracion/modulo/Modulo';
@@ -27,7 +28,7 @@ import Personal from './routes/gestionPersona/personal/Personal';
 const Navbar = () => {
     return ( 
         <Router>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dar">
         <div className="container-fluid">
             <button className="btn btn-none" >
             <Link to="/" className="navbar-brand">
@@ -122,6 +123,9 @@ const Navbar = () => {
       </nav>
 
         <Switch>
+            <Route path="/login">
+                <Login/>
+            </Route>
             <Route path="/modulo">
                 <Modulo/>
             </Route>

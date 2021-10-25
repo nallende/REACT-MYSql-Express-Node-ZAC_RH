@@ -9,13 +9,13 @@ const Form = ({dataInsert, setDataInsert}) => {
         })
     }
 
-    let {nombre} = dataInsert;
+    let {nombre, rut, direccion,telefono,email, contacto, imagen} = dataInsert;
 
     const handleSubmit = () =>{
         //validation of data
-        if(nombre === ''){
-            alert ('datos erroneos')
-            return
+        if(nombre === '' || rut=== '' || direccion=== ''||telefono=== ''||email=== ''||contacto=== ''){
+            alert ('Debe llenar todos los datos')
+            return;
         }
 
         const requestInit = {

@@ -37,8 +37,6 @@ const Form = ({dataInsert, setDataInsert}) => {
         setDataInsert({
             nombre:'',  estado:1
         })
-
-
     }
 
     return ( 

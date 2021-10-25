@@ -2,9 +2,9 @@ import React from 'react';
 
 const Inicio = () => {
     return (
-        <div>
+        <div className="container">
             <h1>
-                RHCloud
+                RH Cloud
             </h1>
         </div>
       );

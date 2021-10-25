@@ -44,7 +44,7 @@ const List = (props) => {
                             <td>{data.direccion}</td>
                             <td>{data.telefono}</td>
                             <td>{data.email}</td>
-                            <td>{data.estado}</td>
+                            <td>{data.estadotexto}</td>
                             <td>
                             <button 
                                 className="btn btn-dark"
